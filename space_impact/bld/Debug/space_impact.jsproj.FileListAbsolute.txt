@@ -1,0 +1,13 @@
+C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\bin\Debug\resources.pri
+C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\bin\Debug\AppxManifest.xml
+C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\bin\Debug\space_impact.build.appxrecipe
+C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\bld\Debug\priconfig.xml.intermediate
+C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\bld\Debug\layout.resfiles.intermediate
+C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\bld\Debug\resources.resfiles.intermediate
+C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\bld\Debug\pri.resfiles.intermediate
+C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\bld\Debug\priconfig.xml
+C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\bld\Debug\layout.resfiles
+C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\bld\Debug\resources.resfiles
+C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\bld\Debug\pri.resfiles
+C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\bld\Debug\LanguageQualifiers.txt
+C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\bld\Debug\ProjectArchitectures.txt

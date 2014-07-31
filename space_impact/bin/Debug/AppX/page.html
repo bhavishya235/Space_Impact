@@ -1,0 +1,569 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>space_impact</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- space_impact references -->
+    <link href="/css/default.css" rel="stylesheet" />
+
+    <style>
+        #canvas {
+            background-color: whitesmoke;
+            height: 600px;
+            background-image: url("images/background1.jpg");
+            background-size:cover;
+            background-repeat: repeat-x;
+        }
+    </style>
+    <script src="/js/default.js"></script>
+    
+    <script>
+        //function init2() {
+        var cssXPos = 1300;
+        var cssMaxWidth = 0;
+        var canvash = 800, canvasw = 1300;
+        var score = 0;
+        var enemyfire = Array();
+        var enemyfirex = Array();
+        var enemyfirey = Array();
+        var enemyfireflag = Array();
+        var ebullnum = 0;
+        var enemyx, enemyy;
+
+        var canvas, context, x, y, speed, width, height, playerimage;
+        var shiphealth = 100;
+        var flag1 = 1, flag = 1;
+        var endx = 0;
+        var endy = 0;
+        var bulltimer = 0;
+        var bullnum = 0;
+        var firespeed = 15;
+        var fire = Array();
+        var firex = Array();
+        var firey = Array();
+        var fireflag = Array();
+        for(var i=0;i<=100;i++) 
+        {
+                fireflag[i]=0;
+        }
+        var fireheight = 20; var firewidth = 30;
+
+            //JAVESH
+        var count = 0;
+
+        var alien = Array();
+        var alientype = Array();
+        var alienx = Array();
+        var alieny = Array();
+        var aliencounter = Array();
+        var aliennum = 0;
+        var alienflag = Array();
+        for (var i = 0; i <= 100; i++) alienflag[i] = 0;
+
+        var bulletid;
+        var ecounter = new Array();
+        var enemycounter = 0;
+        var health;
+        var healthx;
+        var healthy;
+        var healthflag = 0;
+        var healthcounter = 0;
+
+        var shock = 0;
+        var special = 0;
+
+        var power;
+        var powerx;
+        var powery;
+        var powercounter = 0;
+        var powerflag = 0;
+
+        var shockwave;
+        var shockwavex, shockwavey;
+        var shockwaveflag = 0;
+
+        var dragonfire = new Array();
+        var num = 0;
+        var rundragon = 0;
+        var collidedragon = 0;
+        var dragon;
+        var dragonx;
+        var dragony;
+        var dragx = new Array();
+        var dragy = new Array();
+        var dragflag = new Array();
+        var dragoncounter = 0;
+        var dragonflag = 0;
+
+
+        var boom = new Image();
+        boom.src = "images/boom.png";
+
+        var endgame = new Image();
+        endgame.src = "images/game_over.jpg";
+
+        var map = Array();
+
+        var refreshIntervalId2 = setInterval(function () {
+            func();
+        }, 500);
+
+        //  init();
+
+        var refreshIntervalId = setInterval(function () {
+            render();
+            update();
+            MoveBackGround();
+        }, 25);
+        //}
+
+        //    init2();
+
+        function MoveBackGround() {
+            score = score + 10;
+            cssXPos = cssXPos - 3;
+            if (cssXPos <= 0) {
+                cssXPos = canvasw;
+            }
+            toMove = document.getElementById("canvas");
+            toMove.style.backgroundPosition = cssXPos + "px 0px";
+        }
+
+
+        function func() {
+            if (count == 3) {
+                count = 0;
+                if (healthflag == 0 && healthcounter > 10) {
+                    var w = Math.floor(Math.random() * (canvas.height - width));
+                    // var w = 250;
+                    var name = "images/url.png";
+                    health = new Image();
+                    health.src = name;
+                    healthx = (canvas.width - width);
+                    healthy = w;
+                    healthflag = 1;
+                    healthcounter = 0;
+                }
+                if (powerflag == 0 && powercounter > 15) {
+                    var w = Math.floor(Math.random() * (canvas.height - width));
+                    // var w = 250;
+                    var name = "images/jerry.png";
+                    power = new Image();
+                    power.src = name;
+                    powerx = (canvas.width - width);
+                    powery = w;
+                    powerflag = 1;
+                    powercounter = 0
+                }
+
+                if (dragonflag == 0 && dragoncounter > 20) {
+                    var w = Math.floor(Math.random() * (canvas.height - width));
+                    // var w = 250;
+                    var name = "images/dragon.png";
+                    dragon = new Image();
+                    dragon.src = name;
+                    dragonx = (canvas.width - 4 * width);
+                    dragony = w;
+                    dragx[num] = (canvas.width - 4 * width);
+                    dragy[num] = w;
+                    dragonfire[num] = new Image();
+                    dragonfire[num].src = "images/fire.png";
+                    dragonflag = 1;
+                    dragflag[num] = 1;
+                    dragoncounter = 0;
+                    num += 1;
+                }
+
+                dragoncounter += 1;
+                powercounter += 1;
+                healthcounter += 1;
+            }
+            if (aliennum > 20) aliennum = 0;
+            if (count == 0) {
+                //     alien();
+                var j = Math.floor(Math.random() * 8);
+                var w = Math.floor(Math.random() * (canvas.height - width));
+                //var j = 1, w = 250;
+                alien[aliennum] = new Image();
+                var name = "images/alien" + j + ".png";
+                alientype[aliennum] = j;
+                alien[aliennum].src = name;
+                alienx[aliennum] = (canvas.width - width);
+                alieny[aliennum] = w;
+                alienflag[aliennum] = 1;
+                aliencounter[aliennum] = 1;
+                aliennum = aliennum + 1;
+                count = count + 1;
+            }
+            else {
+                count = count + 1;
+                var w = Math.floor(Math.random() * (canvas.height - width));
+                // var w = 250;
+                alientype[aliennum] = alientype[aliennum - 1];
+                var name = "images/alien" + alientype[aliennum] + ".png";
+                alien[aliennum] = new Image();
+                alien[aliennum].src = name;
+                alienx[aliennum] = (canvas.width - width);
+                alieny[aliennum] = w;
+                alienflag[aliennum] = 1;
+                aliencounter[aliennum] = 1;
+                aliennum = aliennum + 1;
+            }
+        }
+        //ENDJAVESH
+
+
+        function init() {
+            canvas = document.getElementById("canvas");
+            context = canvas.getContext("2d");
+
+            x = 20; //align to centre of the screen
+            y = canvas.height / 2; //same as above
+
+            speed = 10; //speed for the player to move at
+
+            width = 100; //width of the player
+            height = 100; //height of the player
+
+            playerimage = new Image();
+            playerimage.src = "images/RayDestroyer.png"; //path to the image to use for the player
+            document.addEventListener('keydown', update0);
+            document.addEventListener('keyup', update0);
+        }
+
+        function update0(e) {
+            if (e.type == 'keydown') map[e.keyCode] = 1;
+            else map[e.keyCode] = 0;
+        }
+
+        function update() {
+            bulltimer++;
+            if (map["32"]) {
+                if (bulltimer == 1) { bulletid = 0; bullet(); }
+                else if (bulltimer > 10) bulltimer = 0;
+            }
+            if (map["65"]) {
+                if (shock > 0) { killall(); shock -= 1; }
+            }
+            if (map["38"]) y -= speed;
+            if (map["40"]) y += speed;
+            if (map["37"]) x -= speed;
+            if (map["39"]) x += speed;
+        }
+
+        function killall() {
+            shockwave = new Image();
+            shockwave.src = "images/spark.png";
+            shockwavex = x + width;
+            shockwavey = y + height / 2;
+            shockwaveflag = 1;
+        }
+
+        function bullet() {
+            if (bulletid == 0) {
+                if (bullnum >= 100) bullnum = 0;
+                fire[bullnum] = new Image();
+                fire[bullnum].src = "images/bullet.png"; //path to the image to use for the player
+                fire[bullnum].id = "bullet" + bullnum;
+                firex[bullnum] = x + width / 2;
+                firey[bullnum] = y+14;
+                fireflag[bullnum] = 1;
+                bullnum = bullnum + 1;
+            }
+            else {
+                enemyfire[ebullnum] = new Image();
+                enemyfire[ebullnum].src = "images/bull.jpg"; //path to the image to use for the player
+                enemyfire[ebullnum].id = "ebullet" + ebullnum;
+                enemyfirex[ebullnum] = enemyx - width;
+                enemyfirey[ebullnum] = enemyy + height / 2;
+                enemyfireflag[ebullnum] = 1;
+                ebullnum = ebullnum + 1;
+            }
+
+        }
+
+        function render() {
+
+            //conditions for ship
+            if (y > 0) y = y % (canvas.height-50);
+            else y = canvas.height - height;
+            if (x < 0) x = 0;
+            if (x > canvas.width - width) x = canvas.width - width;
+            //done
+
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            //player
+            context.drawImage(playerimage, x, y, width+50, height+25);
+
+            //health
+            if (healthflag == 1) {
+                context.drawImage(health, healthx, healthy, 50, 50);
+                healthx -= 6;
+                if (healthx <= 0)
+                    healthflag = 0;
+                if (x >= healthx - width && x <= healthx + 25 && y >= healthy - height && y <= healthy + 25) {
+                    shiphealth += 20;
+                    healthflag = 0;
+                }
+            }
+
+            //fires
+            for (var i = 0; i < 100; i++) {
+                if (fireflag[i]) {
+                    firex[i] += firespeed;
+                    if (firex[i] > canvas.width) fireflag[i] = 0; //also for collision
+                    for (var j = 0; j < 20; j++) {
+                        if (alienflag[j]) {
+                            if (firex[i] >= alienx[j] && firey[i] > alieny[j] && firey[i] < alieny[j] + 50) {
+                                fireflag[i] = 0;
+                                alienflag[j] = 0;
+                                context.drawImage(boom, alienx[j], alieny[j], 100, 100);
+                                score = score + 100;
+                            }
+                        }
+                        else context.drawImage(fire[i], firex[i], firey[i], firewidth * 2, fireheight * 6);
+                    }
+                }
+            }
+            
+            for (var i = 0; i < ebullnum; i++) {
+                if (enemyfirex[i] <= x + 30 && enemyfirey[i] > y && enemyfirey[i] < y + 100 && enemyfireflag[i]) {
+                    shiphealth = shiphealth - 1;
+                    score = score - 10;
+                    enemyfireflag[i] = 0;
+                }
+                if (enemyfireflag[i]) {
+                    enemyfirex[i] -= firespeed;
+                    if (enemyfirex[i] < 0) enemyfireflag[i] = 0; //also for collision
+                    else context.drawImage(enemyfire[i], enemyfirex[i], enemyfirey[i], firewidth / 2, fireheight / 2);
+                }
+            }
+
+
+
+
+
+            //javesh enemy
+            for (var i = 0; i < 20; i++) {
+                if (alienflag[i]) {
+                    if (x >= alienx[i] - width && x <= alienx[i] + 50 && y >= alieny[i] - height && y <= alieny[i] + 50) {
+                        shiphealth = shiphealth - 9;
+                        alienflag[i] = 0;
+                        context.drawImage(boom, alienx[i], alieny[i], 100, 100);
+                        endx = alienx[i] - 50; endy = alieny[i] - 50;
+                    }
+                    switch (alientype[i]) {
+                        case 0: {
+                            alienx[i] = alienx[i] - 6;
+                            if (aliencounter[i]) {
+                                enemyx = alienx[i]; enemyy = alieny[i];
+                                bulletid = 1; bullet();
+                                aliencounter[i] = 0;
+                            }
+                        } break;
+                        case 1: { alienx[i] = alienx[i] - 6; alieny[i] = 20 * Math.sin(alienx[i]) + 350; } break;
+                        case 2: {
+                            alienx[i] = alienx[i] - 6;
+                            if (alieny[i] > canvas.height - height) flag1 = 1;
+                            else if (alieny[i] < 0) flag1 = 0;
+                            if (flag1) alieny[i] = alieny[i] - 6;
+                            else alieny[i] = alieny[i] + 6;
+                            if (aliencounter[i]) {
+                                enemyx = alienx[i]; enemyy = alieny[i];
+                                bulletid = 1; bullet();
+                                aliencounter[i] = 0;
+                            }
+                        } break;
+                        case 3: { alienx[i] = alienx[i] - 6; } break;
+                        case 4: {
+                            alienx[i] = alienx[i] - 6; alieny[i] = 20 * Math.sin(alienx[i]) + 150;
+                            if (aliencounter[i]) {
+                                enemyx = alienx[i]; enemyy = alieny[i];
+                                bulletid = 1; bullet();
+                                aliencounter[i] = 0;
+                            }
+                        } break;
+                        case 5: { alienx[i] = alienx[i] - 6; } break;
+                        case 6: {
+                            alienx[i] = alienx[i] - 6;
+                            if (alieny[i] > canvas.height - height) flag = 0;
+                            else if (alieny[i] < 0) flag = 1;
+                            if (flag) alieny[i] = alieny[i] + 6;
+                            else alieny[i] = alieny[i] - 6;
+                        } break;
+                        case 7: {
+                            alienx[i] = alienx[i] - 6; alieny[i] = alieny[i] + 5;
+                            if (alieny[i] == canvas.height - height * 2) {
+                                alienflag[i] = 0;
+                            }
+                        } break;
+                        case 8: { alienx[i] = alienx[i] - 6; } break;
+                    }
+
+
+                    alienx[i] -= 6;
+                    if (alienx[i] < 0) alienflag[i] = 0;
+                    context.drawImage(alien[i], alienx[i], alieny[i], width, height);
+                }
+            }
+            //end javesh enemy
+            if (shockwaveflag == 1) {
+                context.drawImage(shockwave, shockwavex, 0, 50, canvas.height);
+                shockwavex += 5;
+
+                for (var j = 0; j < 100; j++) {
+                    if (alienflag[j] == 1) {
+                        if (alienx[j] <= shockwavex + 5) {
+                            alienflag[j] = 0;
+                            context.drawImage(boom, alienx[j], alieny[j], 100, 100);
+                            score = score + 100;
+                        }
+                    }
+                }
+
+                if (shockwavex >= canvas.width)
+                    shockwaveflag = 0;
+
+            }
+
+            if (powerflag == 1) {
+                context.drawImage(power, powerx, powery, 50, 50);
+                powerx -= 6;
+                if (powerx <= 0)
+                    powerflag = 0;
+                if (x >= powerx - width && x <= powerx + 25 && y >= powery - height && y <= powery + 25) {
+                    shock += 1;
+                    powerflag = 0;
+                }
+            }
+
+            if (dragonflag == 1) {
+                context.drawImage(dragon, dragonx, dragony, 150, 100);
+                if (dragx[num - 1] <= 0) dragflag[num - 1] = 0;
+
+                if (dragx[num - 1] <= x + 30 && dragy[num - 1] > y && dragy[num - 1] < y + 100) {
+                    shiphealth -= 10;
+                    dragflag[num - 1] = 0;
+                    context.drawImage(boom, x, y, 100, 100);
+                }
+
+                if (dragflag[num - 1] == 1) {
+                    context.drawImage(dragonfire[num - 1], dragx[num - 1], dragy[num - 1]-10, 75, 25);
+                    dragx[num - 1] -= 10;
+                }
+                else {
+
+                    dragonfire[num] = new Image();
+                    dragonfire[num].src = "images/fire.png";
+                    dragx[num] = dragonx;
+                    dragy[num] = dragony;
+                    dragflag[num] = 1;
+                    num += 1;
+
+
+                }
+                if (dragony <= 0)
+                    rundragon = 1;
+                else if (dragony >= canvas.height - height)
+                    rundragon = 0;
+
+                if (rundragon == 1)
+                    dragony += 10;
+                else
+                    dragony -= 10;
+
+                for (var i = 0; i < 100; i++) {
+                    if (fireflag[i] == 1) {
+                        if (firex[i] >= dragonx && firey[i] > dragony && firey[i] < dragony + 100) {
+                            context.drawImage(boom, dragonx, dragony, 100, 100);
+                            collidedragon += 1;
+                            score += 100;
+
+                        }
+                    }
+                    if (collidedragon >= 5) {
+                        context.drawImage(boom, dragonx, dragony, 100, 100);
+                        context.drawImage(boom, dragonx + 50, dragony - 10, 100, 100);
+                        context.drawImage(boom, dragonx + 50, dragony + 20, 100, 100);
+                        context.drawImage(boom, dragonx, dragony + 50, 100, 100);
+                        dragonflag = 0;
+                        collidedragon = 0;
+                        score += 500;
+                    }
+
+                }
+            }
+
+            document.getElementById("score").innerHTML = score;
+
+            //health bar
+            if (shiphealth > 0)
+                document.getElementById("healthbar1").style.backgroundColor = "green";
+            else document.getElementById("healthbar1").style.backgroundColor = "black";
+            if (shiphealth > 20)
+                document.getElementById("healthbar2").style.backgroundColor = "green";
+            else document.getElementById("healthbar2").style.backgroundColor = "black";
+            if (shiphealth > 40)
+                document.getElementById("healthbar3").style.backgroundColor = "green";
+            else document.getElementById("healthbar3").style.backgroundColor = "black";
+            if (shiphealth > 60)
+                document.getElementById("healthbar4").style.backgroundColor = "green";
+            else document.getElementById("healthbar4").style.backgroundColor = "black";
+            if (shiphealth > 80)
+                document.getElementById("healthbar5").style.backgroundColor = "green";
+            else document.getElementById("healthbar5").style.backgroundColor = "black";
+
+            if (shiphealth <= 0) {
+                clearInterval(refreshIntervalId);
+                clearInterval(refreshIntervalId2);
+
+                //document.getElementById("score").style
+                context.drawImage(endgame, endx, endy, 300, 300);
+
+                var a1 = document.createElement('a');
+                var linkText = document.createTextNode("Try Again !!!");
+                a1.appendChild(linkText);
+                a1.href = "page.html";
+                a1.style.position = "absolute";
+
+
+                var a2 = document.createElement('a');
+                var linkText = document.createTextNode("Menu");
+                a2.appendChild(linkText);
+                a2.href = "default.html";
+                a2.style.position = "absolute";
+
+                document.getElementById("try").appendChild(a1);
+                document.getElementById("menu").appendChild(a2);
+            }
+        }
+    </script>
+</head>
+<body id="bullet" style="background-color: black">
+    <audio autoplay="autoplay" loop="true">
+        <source src="abc.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <canvas id="healthbar1" height="30" width="50" style="float:left;border:4px solid #f00;margin-top:20px;"></canvas>
+    <canvas id="healthbar2" height="30" width="50" style="float:left;border:4px solid #f00;margin-top:20px;"></canvas>
+    <canvas id="healthbar3" height="30" width="50" style="float:left;border:4px solid #f00;margin-top:20px;"></canvas>
+    <canvas id="healthbar4" height="30" width="50" style="float:left;border:4px solid #f00;margin-top:20px;"></canvas>
+    <canvas id="healthbar5" height="30" width="50" style = "float:left;border:4px solid #f00;margin-top:20px;"></canvas>
+
+        <canvas id="canvas" height="600" width="1400" style="border:1px solid #f00;margin-top:40px"></canvas>
+
+    <div style="position:absolute;top:30px;left:500px;"><h3 style="color:green;">Score-></h3></div>
+    <div id="score" style="position:absolute;top:30px;left:550px;margin-left:20px;letter-spacing:.3em;"></div>
+    <div id="try" style="position:absolute;top:30px;left:750px;margin-left:20px;letter-spacing:.3em;"></div>
+    <div id="menu" style="position:absolute;top:30px;left:850px;margin-left:20px;letter-spacing:.3em;"></div>
+    <script>
+        init();
+    </script>
+</body>
+</html>

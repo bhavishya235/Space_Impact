@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>QWERTY</Machine>
+    <WindowsUser>tom</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\ab.mp3">
+      <PackagePath>ab.mp3</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\abc.mp3">
+      <PackagePath>abc.mp3</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\default.html">
+      <PackagePath>default.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\page.html">
+      <PackagePath>page.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\alien0.png">
+      <PackagePath>images\alien0.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\alien1.png">
+      <PackagePath>images\alien1.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\alien10.png">
+      <PackagePath>images\alien10.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\alien2.png">
+      <PackagePath>images\alien2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\alien3.png">
+      <PackagePath>images\alien3.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\alien4.png">
+      <PackagePath>images\alien4.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\alien5.png">
+      <PackagePath>images\alien5.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\alien6.png">
+      <PackagePath>images\alien6.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\alien7.png">
+      <PackagePath>images\alien7.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\alien8.png">
+      <PackagePath>images\alien8.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\alien9.png">
+      <PackagePath>images\alien9.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\boom.png">
+      <PackagePath>images\boom.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\bullet.png">
+      <PackagePath>images\bullet.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\dragon.png">
+      <PackagePath>images\dragon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\fire.png">
+      <PackagePath>images\fire.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\fire1.png">
+      <PackagePath>images\fire1.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\fire4.png">
+      <PackagePath>images\fire4.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\high.png">
+      <PackagePath>images\high.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\images.png">
+      <PackagePath>images\images.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\MENU.png">
+      <PackagePath>images\MENU.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\play.png">
+      <PackagePath>images\play.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\play2.png">
+      <PackagePath>images\play2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\RayDestroyer.png">
+      <PackagePath>images\RayDestroyer.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\smalllogo.png">
+      <PackagePath>images\smalllogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\space.png">
+      <PackagePath>images\space.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\spark.png">
+      <PackagePath>images\spark.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\splashscreen.png">
+      <PackagePath>images\splashscreen.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\storelogo.png">
+      <PackagePath>images\storelogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\jerry.png">
+      <PackagePath>images\jerry.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\try.png">
+      <PackagePath>images\try.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\url.png">
+      <PackagePath>images\url.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\background1.jpg">
+      <PackagePath>images\background1.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\boom.jpg">
+      <PackagePath>images\boom.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\bull.jpg">
+      <PackagePath>images\bull.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\bullet.jpg">
+      <PackagePath>images\bullet.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\front.jpg">
+      <PackagePath>images\front.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\game_over.jpg">
+      <PackagePath>images\game_over.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\health.jpg">
+      <PackagePath>images\health.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\jerry.jpg">
+      <PackagePath>images\jerry.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\mm.jpg">
+      <PackagePath>images\mm.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\space.jpg">
+      <PackagePath>images\space.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\tom.jpg">
+      <PackagePath>images\tom.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\wall1.jpg">
+      <PackagePath>images\wall1.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\wall2.jpg">
+      <PackagePath>images\wall2.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\wall3.jpg">
+      <PackagePath>images\wall3.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\wall4.jpg">
+      <PackagePath>images\wall4.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\wall5.jpg">
+      <PackagePath>images\wall5.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\wall6.jpg">
+      <PackagePath>images\wall6.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\wall7.jpg">
+      <PackagePath>images\wall7.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\boom.gif">
+      <PackagePath>images\boom.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\images\wall3.jpeg">
+      <PackagePath>images\wall3.jpeg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\js\default.js">
+      <PackagePath>js\default.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\xmlfile.xml">
+      <PackagePath>xmlfile.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tom\Desktop\appathon\space_impact3\space_impact\space_impact\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.WinJS.1.0\1.0\">
+      <Name>Microsoft.WinJS.1.0</Name>
+      <Version>1.0.8514.0</Version>
+      <Architecture>Neutral</Architecture>
+      <FrameworkIdentity>Name=Microsoft.WinJS.1.0, MinVersion=1.0.8514.0</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.WinJS.1.0\1.0\Microsoft.WinJS.1.0.appx</AppxLocation>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>
